@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "Dial":"../../components/dial/index",
+    "Feedback":"../../components/feedback/index"
+  },
+  "navigationBarBackgroundColor": "#daffe5"
+}

@@ -1,0 +1,60 @@
+/* pages/mine/index.less */
+.head-img {
+  width: 750rpx;
+  height: 230rpx;
+}
+
+.edit-btn {
+  position: absolute;
+  top: 223rpx;
+  right: 54rpx;
+  width: 140rpx;
+  height: 56rpx;
+  box-shadow: 0rpx 2rpx 14rpx 0rpx rgba(0, 0, 0, 0.06);
+  border-radius: 32rpx;
+  border: 2rpx solid var(--green);
+  font-size: 28rpx;
+  font-weight: 500;
+  color: var(--green);
+  line-height: 56rpx;
+  text-align: center;
+}
+
+.m-plan {
+  position: absolute;
+  height: 60rpx;
+  top: -10rpx;
+  box-shadow: none;
+
+  .u-plan {
+    height: 60rpx;
+    align-items: center;
+    justify-content: flex-end;
+    background: linear-gradient(90deg, var(--alpha0) 0%, var(--light-yellow) 100%);
+    border-width: 2rpx 0rpx;
+    border-style: solid;
+    border-color: var(--yellow);
+
+    &::before {
+      content: "训练计划" !important;
+    }
+  }
+}
+
+.m-set {
+  position: relative;
+  top: 10rpx;
+  box-shadow: none;
+  max-width: 100%;
+
+  .u-set {
+    background: var(--light-yellow);
+    border-width: 2rpx 0rpx;
+    border-style: solid;
+    border-color: var(--yellow);
+
+    &::before {
+      content: "设置" !important;
+    }
+  }
+}

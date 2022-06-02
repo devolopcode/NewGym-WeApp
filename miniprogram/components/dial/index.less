@@ -1,0 +1,75 @@
+/* components/state/index.less */
+@import '../../assets/css/normalize.less';
+@import '../../assets/css/base.less';
+@import '../../assets/css/color.less';
+@import '../../assets/css/font.less';
+@import '../../assets/css/layout.less';
+@import '../../assets/css/modules.less';
+
+.container {
+  position: relative;
+  padding: 28rpx 0 30rpx;
+  top: 40rpx;
+  background: #FEFEFE;
+  box-shadow: 0rpx 2rpx 14rpx 0rpx rgba(0, 0, 0, 0.06);
+  border-radius: 16rpx;
+  box-sizing: border-box;
+
+  .m-task {
+    margin-top: 30rpx;
+    margin-bottom: 28rpx;
+    font-size: 28rpx;
+    line-height: 28rpx;
+    padding: 0 60rpx;
+
+    .u-heading {
+      display: flex;
+      align-items: center;
+      .block{
+        width: 6rpx;
+        height: 22rpx;
+        background-color: var(--green);
+      }
+      .text{
+        text-indent: 5rpx;
+      }
+    }
+    .u-volume{
+      margin-top: 14rpx;
+      line-height: 30rpx;
+      word-break: keep-all;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+      text-align: justify;
+      text-justify: inter-word;
+    }
+  }
+
+  .m-data {
+    display: flex;
+    flex-flow: row;
+    // margin-top: 24rpx;
+    width: 702rpx;
+
+    .u-data {
+      width: 702rpx;
+      height: 110rpx;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      justify-content: space-between;
+
+      .property {
+        left: 0rpx;
+      }
+
+      .number {
+        text-indent: 0rpx;
+      }
+
+      .orange {
+        color: var(--orange);
+      }
+    }
+  }
+}

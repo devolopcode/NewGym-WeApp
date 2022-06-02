@@ -1,0 +1,64 @@
+/* components/edit/index.less */
+@import '../../assets/css/normalize.less';
+@import '../../assets/css/base.less';
+@import '../../assets/css/color.less';
+@import '../../assets/css/font.less';
+@import '../../assets/css/layout.less';
+@import '../../assets/css/modules.less';
+
+.container {
+  position: absolute;
+  left: 0;
+  top: 97rpx;
+  width: 594rpx;
+  height: auto;
+  box-sizing: content-box;
+  background: #FEFEFE;
+  display: grid;
+  grid-auto-flow: row;
+  row-gap: 30rpx;
+
+  .u-info {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    position: relative;
+    width: 702rpx;
+    height: 46rpx;
+
+    .property {
+      position: relative;
+      left: 44rpx;
+    }
+
+    .value {
+      position: relative;
+      left: 104rpx;
+      line-height: 46rpx;
+      padding-left: 30rpx;
+      box-sizing: border-box;
+      color: #979797;
+    }
+
+    .longline {
+      width: 386rpx;
+      border-bottom: 1rpx solid #EEEEEE;
+    }
+
+    .line {
+      width: 111rpx;
+      border-bottom: 1rpx solid #EEEEEE;
+
+    }
+
+    .unit {
+      position: relative;
+      left: 114rpx;
+      font-size: 28rpx;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #171717;
+      line-height: 40rpx;
+    }
+  }
+}

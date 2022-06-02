@@ -1,0 +1,80 @@
+/* page/login/login.less */
+.container{
+  display: flex;
+  justify-content: center;
+  background:
+    linear-gradient(rgb(213, 254, 226),
+      transparent),
+    linear-gradient(-45deg,
+      rgb(157, 237, 184),
+      transparent),
+    linear-gradient(45deg,
+      rgb(185, 252, 227),
+      transparent);
+}
+.m-login{
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+  width: 600rpx;
+  height: 344rpx;
+  background: var(--white);
+  padding: 30rpx;
+  border-radius: 16rpx;
+  box-shadow: 0rpx 2rpx 14rpx 0rpx rgba(0, 0, 0, 0.16);
+  .u-title{
+    height: 64rpx;
+    line-height: 64rpx;
+    font-size: 36rpx;
+    text-align: center;
+  }
+  .u-pho,.u-ide{
+    display: grid;
+    width: 600rpx;
+    height: 96rpx;
+    .lab{
+      width: auto;
+      padding: 10rpx 0;
+      font-size: 28rpx;
+      line-height: 96rpx;
+    }
+    .ipt{
+      border: 1rpx solid var(--green);
+      height: 56rpx;
+      line-height: 56rpx;
+      padding-left: 16rpx;
+      border-radius: 8rpx;
+    }
+  }
+  .u-pho{
+    grid-template-columns: 96rpx auto;
+    column-gap: 20rpx;
+    align-items: center;
+  }
+  .u-ide{
+    grid-template-columns: 96rpx auto auto;
+    column-gap: 20rpx;
+    align-items: center;
+    .btn{
+      padding:10rpx;
+      width: 120rpx;
+      height: 36rpx;
+      font-size: 24rpx;
+      line-height: 36rpx;
+      background: var(--green);
+      text-align: center;
+    }
+    .btn.tapped{
+      opacity: .5;
+    }
+  }
+  .u-btn{
+    position: relative;
+    top: 32rpx;
+    font-size: 28rpx;
+    height: 56rpx;
+    line-height: 56rpx;
+    padding: 0;
+    color: var(--white);
+  }
+}

@@ -1,0 +1,33 @@
+/* components/info/info.less */
+@import '../../assets/css/base.less';
+@import '../../assets/css/color.less';
+@import '../../assets/css/font.less';
+@import '../../assets/css/layout.less';
+@import '../../assets/css/modules.less';
+@import '../../assets/css/normalize.less';
+.container {
+  display: grid;
+  row-gap: 26rpx;
+  grid-auto-flow: row;
+  padding: 28rpx 0 30rpx;
+  position: relative;
+  box-sizing: content-box;
+  background: #FEFEFE;
+  box-shadow: 0rpx 2rpx 14rpx 0rpx rgba(0, 0, 0, 0.06);
+  border-radius: 16rpx;
+
+  .body{
+    display: grid;
+    flex-direction: row;
+    row-gap: 24rpx;
+    width: 100%;
+    height: auto;
+    .u-info {
+      display: flex;
+      align-items: center;
+      position: relative;
+      width: 702rpx;
+      height: 40rpx;
+    }
+  }
+}

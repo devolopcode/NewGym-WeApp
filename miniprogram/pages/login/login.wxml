@@ -1,0 +1,16 @@
+<!--pages/login/login.wxml-->
+<view class="container">
+  <form class="m-login">
+    <view class="u-title">登录</view>
+    <label class="u-pho">
+      <span class="lab">手机号</span>
+      <input class="ipt" bindinput="inputPhone" type="number" />
+    </label>
+    <label class="u-ide">
+      <span class="lab">验证码</span>
+      <input class="ipt" bindinput="inputCode" type="number" maxlength="6" />
+      <view class="btn {{tapped?'tapped':''}}" bindtap="getCode">{{tapped?time+'s':value}}</view>
+    </label>
+    <button class="circle-btn bg-green u-btn" bindtap="loginSystem">登录</button>
+  </form>
+</view>

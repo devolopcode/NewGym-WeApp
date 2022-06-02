@@ -1,0 +1,14 @@
+<!--components/showModel/index.wxml-->
+<view class="container">
+  <view class="u-model" style="height: {{height}}rpx;">
+    <view class="caption">{{caption}}</view>
+    <view wx:if="{{showContent}}" class="content">{{content}}</view>
+    <view>
+      <slot></slot>
+    </view>
+    <view class="u-btn">
+      <view class="btn confirm" bindtap="confirm">确认</view>
+      <view class="btn cancel" bindtap="cancel">取消</view>
+    </view>
+  </view>
+</view>

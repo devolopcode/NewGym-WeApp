@@ -1,0 +1,45 @@
+/* components/feedback/inde.wxss */
+@import url('../../assets/css/base.less');
+.container{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  position: relative;
+  .u-heading {
+    width: 546rpx;
+    display: flex;
+    align-items: center;
+    .block{
+      width: 6rpx;
+      height: 22rpx;
+      background-color: var(--green);
+    }
+    .text{
+      text-indent: 5rpx;
+    }
+  }
+  .u-select{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: 14rpx;
+    width: 546rpx;
+    .item{
+      display: grid;
+      grid-auto-flow: column;
+      justify-content: flex-start;
+      align-items: center;
+      column-gap: 7rpx;
+      width: 145rpx;
+      height: 40rpx;
+      .icon{
+        width: 26rpx;
+        height: 26rpx;
+      }
+    }
+  }
+  .u-edit{
+    position: relative;
+    top: 34rpx;
+  }
+}

@@ -1,0 +1,13 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+  <view class="bg">
+    <image class="bg-img" src="{{bgUrl[state]}}" mode="widthFix"></image>
+  </view>
+  <view class="m-window" wx:if="{{state==1}}">
+    <view class="text">恭喜您完成第1次训练</view>
+    <view class="text">今日计划剩余次数:<text class="Orange">2</text></view>
+  </view>
+  <view class="btn circle-btn bg-green" bindtap="{{btnTap[state]}}">{{btnText[state]}}</view>
+  <!-- <view class="btn circleBtn bgGreen" bindtap="{{btnTap[state]}}">{{ lang.language }}</view> -->
+  <!-- <button bindtap="switchLanguage">切换</button> -->
+</view>

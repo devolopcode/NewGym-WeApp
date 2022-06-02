@@ -1,0 +1,29 @@
+<!--components/state/index.wxml-->
+<view class="container" style="top: {{top}}rpx;width: {{width}}rpx;">
+  <view class="caption" wx:if="{{showCaption}}">{{caption}}</view>
+
+  <view class="m-task" wx:if="{{showTask}}">
+    <view class="u-heading">
+      <view class="block"></view>
+      <view class="text">今日训练量</view>
+    </view>
+    <view class="u-volume">3次训练，每次10组，每组力度范围20~24</view>
+  </view>
+
+  <view class="m-data" style="width: {{width}}rpx;">
+    <view class="u-data">
+      <view class="property">{{dial[0].property}}</view>
+      <view class="number {{dial[0].value.color}}">{{dial[0].value.text}}</view>
+    </view>
+    <view class="v-line"></view>
+    <view class="u-data">
+      <view class="property">{{dial[1].property}}</view>
+      <view class="number {{dial[1].value.color}}">{{dial[1].value.text}}</view>
+    </view>
+    <view class="v-line"></view>
+    <view class="u-data">
+      <view class="property">{{dial[2].property}}</view>
+      <view class="number {{dial[2].value.color}}">{{dial[2].value.text}}</view>
+    </view>
+  </view>
+</view>

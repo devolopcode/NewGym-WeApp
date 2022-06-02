@@ -1,0 +1,6 @@
+<!--pages/feedback/index.wxml-->
+<view class="container">
+  <view class="u-text">反馈内容：</view>
+  <textarea class="u-edit" placeholder="文本反馈输入域框"></textarea>
+  <view class="btn squire-btn u-btn" bindtap="submit">提交</view>
+</view>

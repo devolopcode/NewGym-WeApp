@@ -1,0 +1,13 @@
+<!--pages/setupnet/index.wxml-->
+<view class="container">
+  <view class="c-tip">
+    <view class="c-tip__title">配网教程</view>
+    <view class="c-tip__item">先连接到 WIFI</view>
+    <view class="c-tip__item">在输入 WIFI 密码</view>
+  </view>
+  <view class="c-input">
+    <view class="c-input__title">WIFI 信息</view>
+    <input class="c-input__wifi" placeholder="WIFI" value="{{wifi}}" bindinput="inputWifi" />
+    <input class="c-input__password" placeholder="请输入密码" />
+  </view>
+</view>

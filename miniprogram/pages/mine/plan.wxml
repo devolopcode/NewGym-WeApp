@@ -1,0 +1,5 @@
+<!--pages/mine/plan.wxml-->
+<view class="container">
+  <Info info="{{info}}" caption="当前训练计划" />
+  <Dial dial="{{dial}}" />
+</view>

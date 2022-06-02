@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "ShowModel":"../../components/showModel/index",
+    "Info":"../../components/info/index",
+    "Edit":"../../components/edit/index"
+  },
+  "navigationBarBackgroundColor": "#fefefe"
+}

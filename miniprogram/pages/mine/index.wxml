@@ -1,0 +1,21 @@
+<!--pages/mine/index.wxml-->
+<view class="container">
+  <image class="head-img" src="../../assets/image/mine/bg_my.png" mode="aspectFill"></image>
+  <Info info="{{info}}" caption="信息确认" top="-30"/>
+  <Info info="{{doctor}}" caption="训练信息" top="-10" height="193" >
+    <view class="m-list m-plan">
+      <view class="u-list u-plan" bindtap="toPlan"></view>
+    </view>
+  </Info>
+  <view class="edit-btn" bindtap="edit">
+    修改
+  </view>
+  <view class="m-list m-set" bindtap="toSet">
+    <view class="u-list u-set"></view>
+  </view>
+  <ShowModel wx:if="{{edit}}" bind:parentCancel="cancel" bind:parentConfirm="confirm"
+  height="568"
+  showContent="{{false}}">
+    <Edit info="{{info}}" id="edit" bind:parentUpdate="update" />
+  </ShowModel>
+</view>

@@ -1,0 +1,25 @@
+/* pages/mine/set.less */
+.m-list:nth-of-type(1){
+  position: relative;
+  top: 20rpx;
+  .u-list:nth-child(1)::before{
+    content: "语言";
+  }
+  .u-list:nth-child(2)::before{
+    content: "关于我们";
+  }
+  .u-list:nth-child(3)::before{
+    content: "用户协议";
+  }
+  .u-list:nth-child(4)::before{
+    content: "隐私政策";
+  }
+}
+.m-list:nth-of-type(2){
+  position: relative;
+  top: 40rpx;
+  .u-list-noicon:nth-child(1)::before{
+    content: "退出登录";
+    color:var(--orange);
+  }
+}

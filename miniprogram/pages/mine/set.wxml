@@ -1,0 +1,14 @@
+<!--pages/mine/set.wxml-->
+<view class="container">
+  <view class="m-list">
+    <view class="u-list">
+      <view class="language">中文</view>
+    </view>
+    <view class="u-list"></view>
+    <view class="u-list"></view>
+    <view class="u-list"></view>
+  </view>
+  <view class="m-list">
+    <view class="u-list-noicon"></view>
+  </view>
+</view>

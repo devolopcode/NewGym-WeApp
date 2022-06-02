@@ -1,0 +1,10 @@
+<!--pages/train/finish.wxml-->
+<view class="container">
+  <view class="bg">
+    <image class="bg-img" src="https://newgym.cn/img/bg_drill_complete.png" mode="widthFix"></image>
+  </view>
+  <view class="title">恭喜你完成今日训练</view>
+  <Dial dial="{{dial}}" top="276" width="636" />
+  <Feedback id="feedback" />
+  <view class="btn circle-btn bg-green" bindtap="tapFinish">完成</view>
+</view>

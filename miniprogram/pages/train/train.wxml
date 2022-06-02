@@ -1,0 +1,69 @@
+<!--pages/train/train.wxml-->
+<wxs module="format">
+  function formatTime(insisTime){
+    if(insisTime<60) {
+      return insisTime + 's'
+    }else if(insisTime===60){
+      return '1m'
+    }else if(insisTime%60===0){
+      return insisTime/60+'m'
+    } else{
+      return ~~(insisTime/60)+'m '+insisTime%60+'s'
+    }
+  }
+  module.exports.formatTime=formatTime
+</wxs>
+<view class="container" bindtap="hiddenAddDevice">
+  <!-- 训练进度和设备显示 -->
+  <view class="m-train-record">
+    <view class="u-data">
+      <view class="data-item">
+        <view class="property">训练持续时间</view>
+        <view class="number">{{format.formatTime(insistTime)}}</view>
+      </view>
+      <view class="data-item">
+        <view class="property">剩余组数</view>
+        <view class="number">{{restGroup}}</view>
+      </view>
+    </view>
+    <view class="u-device">
+      <view class="cue">{{devicename?'当前设备':'暂无设备'}}</view>
+      <view class="device {{devicename?'has':''}}" catchtap="showAddDevice">{{devicename?devicename:''}}</view>
+    </view>
+  </view>
+
+  <!-- 拉力变化显示 -->
+  <view class="m-train-bar">
+    <view class="u-msg">
+      <view class="hint {{hint[hindIndex].color}}">{{hint[hindIndex].text}}</view>
+      <view class="pound">{{pound+'磅'}}</view>
+    </view>
+    <view class="u-force">
+      <view class="circle {{hint[hindIndex].bgColor}}" style="left:{{(pound/13*610)-13+'rpx'}};"></view>
+      <view class="vary-line {{hint[hindIndex].bgColor}}" style="width: {{(pound/13*610)+'rpx'}};"></view>
+      <view class="bg-line"></view>
+    </view>
+  </view>
+
+  <view class="m-action">
+    <view class="btn u-btn {{states[stateIndex].bgColor}}" bindtap="click">
+      {{states[stateIndex].text}}
+    </view>
+    <view class="btn u-btn u-fbk" bindtap="feedback"></view>
+  </view>
+
+  <view class="m-add-device" hidden="{{!isShowAddDevice}}">
+    <view class="u-add-device" bindtap="inputDevice"> 
+      <view class="icon"></view>
+      <view class="text">输入设备编号</view>
+    </view>
+    <view class="u-add-device" bindtap="scan">
+      <view class="icon"></view>
+      <view class="text">扫描添加</view>
+    </view>
+  </view>
+
+  <ShowModel caption="设备编号" wx:if="{{isShowModel}}" height="270" bind:parentCancel="cancel" bind:parentConfirm="confirm">
+    <input class="input" model:value="{{newDevicename}}" style="position: absolute;top: 110rpx;left: 30rpx;" />
+  </ShowModel>
+</view>

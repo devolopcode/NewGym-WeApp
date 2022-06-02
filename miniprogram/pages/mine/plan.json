@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "Info":"../../components/info/index",
+    "Dial":"../../components/dial/index"
+  }
+}

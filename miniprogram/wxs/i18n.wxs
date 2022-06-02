@@ -1,0 +1,14 @@
+var i18n = {
+  t: function (str, arr) {
+    var result = str;
+    if (arr) {
+      arr.forEach(function (item) {
+        if(result){
+          result = result.replace('{'+item.key+'}', item.value)
+        }
+      })
+    }
+    return result
+  }
+}
+module.exports = i18n

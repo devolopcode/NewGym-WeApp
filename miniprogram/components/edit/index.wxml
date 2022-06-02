@@ -1,0 +1,8 @@
+<!--components/edit/index.wxml-->
+<view class="container" style="width:{{width+'rpx'}};height: {{height+'rpx'}};top:{{top+'rpx'}};">
+  <view class="u-info" wx:for="{{info}}" wx:key="index">
+    <view class="property">{{info[index].property}}</view>
+    <input class="value {{info[index].value.style==''?'longline':info[index].value.style}}" value="{{info[index].value.text}}" bindinput="edit" data-value="{{index}}" />
+    <view class="unit">{{info[index].unit}}</view>
+  </view>
+</view>

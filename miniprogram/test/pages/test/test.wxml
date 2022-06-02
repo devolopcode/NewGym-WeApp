@@ -1,0 +1,10 @@
+<!--pages/train/train.wxml-->
+<view class="container">
+  <TrainRecord insistTime="{{insistTime}}" restGroup="{{restGroup}}" />
+  <ProgressBar id="progressBar" size="test" restGroup="{{restGroup}}" bind:childStart="start" bind:childRest="restGroupt" />
+  <view class="m-action">
+    <view class="btn u-btn {{states[stateIndex].bgColor}}" bindtap="click">
+      {{states[stateIndex].text}}
+    </view>
+  </view>
+</view>

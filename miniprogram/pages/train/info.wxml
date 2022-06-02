@@ -1,0 +1,16 @@
+<!--pages/train/info.wxml-->
+<view class="container">
+  <Info caption="信息确认" info="{{info}}" propertyWidth="140" />
+  <Dial dial="{{dial}}" caption="训练计划" height="363" showCaption="{{true}}" showTask="{{true}}">
+    <view class="u-task">
+      <view class="text">今日训练量</view>
+      <view class="text" style="top: 14rpx;width: 702rpx;text-indent: 60rpx;">3次训练，每次10组，每组力度范围20~24磅</view>
+    </view>
+  </Dial>
+  <view class="u-btn startTrain" bindtap="tapStart">
+    确认并开始第{{number==1?'一':(number==2?'二':'三')}}次训练
+  </view>
+  <view class="u-btn  feedback" bindtap="toFeedback">
+    信息错误反馈
+  </view>
+</view>

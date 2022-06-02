@@ -1,0 +1,11 @@
+<!--components/info/info.wxml-->
+<view class="container" style="width:{{width+'rpx'}};top:{{top+'rpx'}};">
+  <view class="caption">{{caption}}</view>
+  <view class="body">
+    <view class="u-info" wx:for="{{info}}" wx:key="index">
+      <slot></slot>
+      <view class="property" style="width: {{propertyWidth}}rpx;">{{info[index].property}}</view>
+      <view class="value {{info[index].value.style}}" style="left: {{valueLeft}}rpx;">{{info[index].value.text}}</view>
+    </view>
+  </view>
+</view>

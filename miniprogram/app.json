@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/login",
+    "pages/train/train",
+    "pages/train/info",
+    "pages/train/finish",
+    "pages/mine/index",
+    "pages/mine/plan",
+    "pages/mine/set",
+    "pages/feedback/index",
+    "pages/setupnet/index"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#f8f8f8"
+  },
+  "tabBar": {
+    "custom": true,
+    "list": [{
+      "text": "首页",
+      "pagePath": "pages/index/index",
+      "iconPath": "assets/image/tabBar/index.png",
+      "selectedIconPath": "assets/image/tabBar/index-select.png"
+    }, {
+      "text": "我的",
+      "pagePath": "pages/mine/index",
+      "iconPath": "assets/image/tabBar/mine.png",
+      "selectedIconPath": "assets/image/tabBar/mine-select.png"
+    }]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "plugins": {
+    "airkiss": {
+      "version": "1.1.0",
+      "provider": "wx610ea582556c983e"
+    }
+  }
+}

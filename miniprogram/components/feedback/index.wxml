@@ -1,0 +1,14 @@
+<!--components/feedback/inde.wxml-->
+<view class="container box" style="top:{{top}}rpx;width: {{width}}rpx;height:{{height}}rpx;">
+  <view class="u-heading">
+    <view class="block"></view>
+    <view class="text">今日反馈：</view>
+  </view>
+  <view class="u-select">
+    <view class="item" wx:for="{{selectItem}}" wx:key="index">
+      <image class="icon" src="{{selectIndex==index?selectedIcon:selectIcon}}" bindtap="select" data-i="{{index}}"></image>
+      <text class="text">{{selectItem[index]}}</text>
+    </view>
+  </view>
+  <textarea class="edit u-edit" placeholder="文本反馈输入域框" model:value="{{text}}"></textarea>
+</view>
