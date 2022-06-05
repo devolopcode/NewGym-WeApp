@@ -3,10 +3,26 @@
   display: flex;
   justify-content: center;
 }
+.c-tip{
+  counter-reset: section;
+}           
+.c-tip{
+  &__title{
+    font-size: 36rpx;
+  }
+  &__item::before{
+    counter-increment: section;
+    content: counter(section) '. ';
+  }
+}
 .c-input{
   input{
     width: 702rpx;
     height: 30rpx;
     border: 1px solid #000;
+  }
+  &__submit{
+    height: 76rpx;
+    line-height: 76rpx;
   }
 }

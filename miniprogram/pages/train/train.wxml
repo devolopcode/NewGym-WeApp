@@ -57,9 +57,9 @@
       <view class="icon"></view>
       <view class="text">输入设备编号</view>
     </view>
-    <view class="u-add-device" bindtap="scan">
+    <view class="u-add-device" bindtap="setupNet">
       <view class="icon"></view>
-      <view class="text">扫描添加</view>
+      <view class="text">配网</view>
     </view>
   </view>
 

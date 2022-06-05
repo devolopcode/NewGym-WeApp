@@ -231,6 +231,11 @@ Component({
       wx.navigateTo({
         url:'../feedback/index'
       })
+    },
+    setupNet(){
+      wx.navigateTo({
+        url:'../setupnet/index'
+      })
     }
   }
 })

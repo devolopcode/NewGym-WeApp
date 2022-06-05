@@ -7,7 +7,8 @@
   </view>
   <view class="c-input">
     <view class="c-input__title">WIFI 信息</view>
-    <input class="c-input__wifi" placeholder="WIFI" value="{{wifi}}" bindinput="inputWifi" />
-    <input class="c-input__password" placeholder="请输入密码" />
+    <input class="c-input__ssid" placeholder="SSID" value="{{ssid}}" bindinput="inputWifi" />
+    <input class="c-input__password" placeholder="密码" bindinput="inputPassword" />
+    <view class="c-input__submit btn circle-btn bg-green" bindtap="onConfirm">确认</view>
   </view>
 </view>
