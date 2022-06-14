@@ -1,27 +1,49 @@
 /* pages/setupnet/index.wxss */
 .container{
   display: flex;
-  justify-content: center;
-}
+  row-gap: 60rpx;
+}       
 .c-tip{
-  counter-reset: section;
-}           
-.c-tip{
-  &__title{
-    font-size: 36rpx;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  row-gap: 20rpx;
+  counter-reset: view;
+  &__img{
+    width: 360rpx;
+    height: 360rpx;
+    background: url(https://newgym.cn/img/setupnet.png) no-repeat center/cover;
+    margin-bottom: 40rpx;
+  }
+  &__item{
+    font-size: 24rpx;
+  }
+  &__item{
+    width: 100%;
   }
   &__item::before{
-    counter-increment: section;
-    content: counter(section) '. ';
+    counter-increment:view;
+    content: counter(view) '. ';
   }
 }
 .c-input{
-  input{
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  row-gap: 20rpx;
+  &__wifi,&__password{
     width: 702rpx;
-    height: 30rpx;
+    height: 80rpx;
     border: 1px solid #000;
+    border-radius: 8rpx;
+    padding-left: 16rpx;
+    box-sizing: border-box;
+    line-height: 56rpx;
   }
   &__submit{
+    position: relative;
+    top: 0rpx;
+    left: 0rpx;
     height: 76rpx;
     line-height: 76rpx;
   }

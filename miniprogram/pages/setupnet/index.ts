@@ -2,19 +2,18 @@
 const airkiss = requirePlugin('airkiss');
 Component({
   data: {
-    ssid: '',
+    wifi: '',
+    bssid:'',
     password: '',
     is5G: true,
-    showClearBtn: false,
-    isWaring: false,
-    version: ''
   },
-  pageLifetimes: {
-    show() {
+  methods: {
+    onLoad() {
+      console.log(airkiss)
+      console.log(airkiss.version)
       this.setData({
         version: airkiss.version,
       })
-      console.log(this.data.version)
       let that = this
       wx.startWifi({
         success(res) {
@@ -30,9 +29,10 @@ Component({
         }
       })
       this.getWifiInfo()
-    }
-  },
-  methods: {
+    },
+    onUnload(){
+      airkiss.stopAirkiss()
+    },
     getWifiInfo() {
       let that = this
       wx.getConnectedWifi({
@@ -40,8 +40,8 @@ Component({
           console.log("getConnectedWifi ok:", JSON.stringify(res))
           if ('getConnectedWifi:ok' === res.errMsg) {
             that.setData({
-              ssid: res.wifi.SSID,
-              bssid: res.wifi.BSSID,
+              wifi: res.wifi.SSID,
+              bssid:res.wifi.BSSID,
               is5G: res.wifi.frequency > 4900
             })
           } else {
@@ -61,26 +61,30 @@ Component({
         }
       })
     },
-    inputWifi(e: any) {
+    inputWIFI(evt: any) {
       const {
         value
-      } = e.detail;
+      } = evt.detail;
       this.setData({
-        ssid: value,
+        wifi: value,
       });
     },
-    inputPassword(e: any) {
+    inputPassword(evt: any) {
       const {
         value
-      } = e.detail;
+      } = evt.detail;
       this.setData({
         password: value,
+        showClearBtn: !!value.length,
+        isWaring: false,
       });
     },
-    onConfirm() {
-      console.log("ssid:", this.data.ssid, ",password:", this.data.password)
+    confirm() {
+      const that=this
 
-      if (this.data.ssid.length < 1) {
+      console.log("wifi:", this.data.wifi, ",password:", this.data.password)
+
+      if (this.data.wifi.length < 8) {
         wx.showToast({
           title: '请连接路由器',
           duration: 2000,
@@ -110,8 +114,9 @@ Component({
         title: '配网中',
       })
       //这里最好加微信小程序判断账号密码是否为空，以及其长度和是否为5G频段
-      airkiss.startConfig(this.data.ssid, this.data.password, function (res: any) {
+      airkiss.startAirkiss(this.data.wifi, this.data.password, function (res: any) {
         wx.hideLoading();
+        console.log(res)
         switch (res.code) {
           case 0:
             wx.showModal({
@@ -124,9 +129,14 @@ Component({
           case 1:
             wx.showModal({
               title: '配网成功',
-              content: '设备IP：' + res.ip + '\r\n 设备Mac：' + res.bssid,
+              content: '设备IP：' + res.ip + '\r\n 设备Mac：' + that.data.ssid,
               showCancel: false,
               confirmText: '好的',
+              success:(res)=>{
+                if(res.confirm){
+                  wx.navigateBack({})
+                }
+              }
             })
             break;
           case 2:
@@ -137,11 +147,9 @@ Component({
               confirmText: '收到',
             })
             break;
-
           default:
             break;
         }
-
       })
     },
   }
