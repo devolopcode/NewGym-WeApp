@@ -3,6 +3,7 @@ const app=getApp<app>()
 interface app{
   globalData:{
     index:string,
+    network:string,
     mine:string
   }
 }
@@ -25,6 +26,11 @@ Component({
       selectedIconPath: "../assets/image/tabBar/index-select.png",
       text: app.globalData.index
     }, {
+      pagePath:"../network/index",
+      iconPath:"../assets/image/tabBar/network.png",
+      selectedIconPath:"../assets/image/tabBar/network-select.png",
+      text:app.globalData.network
+    },{
       pagePath: "../mine/index",
       iconPath: "../assets/image/tabBar/mine.png",
       selectedIconPath: "../assets/image/tabBar/mine-select.png",

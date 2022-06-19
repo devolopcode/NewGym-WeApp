@@ -2,7 +2,7 @@
 .m-list {
   width: 100%;
   max-width: 702rpx;
-  background: #FEFEFE;
+  background: var(--white);
   box-shadow: 0rpx 2rpx 14rpx 0rpx #00000029;
   border-radius: 16rpx;
 
@@ -30,7 +30,8 @@
       background: url(https://newgym.cn/img/icon_go.png) no-repeat center/cover;
       filter: grayscale(100%);
     }
-    :nth-child(1){
+
+    :nth-child(1) {
       position: absolute;
       right: 58rpx;
       font-size: 24rpx;
@@ -63,5 +64,48 @@
       color: var(--black);
       font-size: 28rpx;
     }
+  }
+}
+
+.m-input {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  row-gap: 20rpx;
+
+  &__item {
+    width: 702rpx;
+    height: 80rpx;
+    background: var(--white);
+    box-shadow: 0rpx 2rpx 14rpx 0rpx #00000029;
+    border-radius: 8rpx;
+    padding-left: 16rpx;
+    box-sizing: border-box;
+    line-height: 56rpx;
+  }
+
+  &__label {
+    width: 702rpx;
+    .ipt{
+      padding-left: 16rpx;
+      box-shadow: 0rpx 2rpx 14rpx 0rpx #00000029;
+    }
+    .btn{
+      box-shadow: 0rpx 2rpx 14rpx 0rpx #00000029;
+    }
+    & :nth-child(n) {
+      height: 80rpx;
+      background: var(--white);
+      border-radius: 8rpx;
+      box-sizing: border-box;
+      line-height: 56rpx;
+    }
+  }
+
+  &__submit {
+    position: static;
+    height: 80rpx;
+    line-height: 80rpx;
+    box-shadow: 0rpx 2rpx 14rpx 0rpx #00000029;
   }
 }

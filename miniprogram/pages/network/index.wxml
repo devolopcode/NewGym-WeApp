@@ -5,9 +5,9 @@
     <view class="c-tip__item">确认手机已连接到家庭 WIFI 路由器网络</view>
     <view class="c-tip__item">输入家庭路由密码，点击确认开始配网</view>
   </view>
-  <view class="c-input">
-    <input class="c-input__wifi" placeholder="WIFI" value="{{wifi}}" bindinput="inputWIFI" />
-    <input class="c-input__password" placeholder="密码" bindinput="inputPassword" />
-    <view class="c-input__submit btn circle-btn bg-green" bindtap="confirm">确认</view>
+  <view class="m-input">
+    <input class="m-input__item" placeholder="WIFI" value="{{wifi}}" bindinput="inputWIFI" />
+    <input class="m-input__item" placeholder="密码" bindinput="inputPassword" />
+    <view class="m-input__submit btn circle-btn bg-green" bindtap="confirm">确认</view>
   </view>
 </view>

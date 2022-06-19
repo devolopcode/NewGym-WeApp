@@ -9,8 +9,11 @@ Component({
   },
   methods: {
     onLoad() {
-      console.log(airkiss)
-      console.log(airkiss.version)
+      if (typeof this.getTabBar === 'function' && this.getTabBar()) {
+        this.getTabBar().setData({
+          selected: 1
+        })
+      }
       this.setData({
         version: airkiss.version,
       })

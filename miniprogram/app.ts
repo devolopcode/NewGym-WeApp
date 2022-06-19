@@ -4,6 +4,7 @@ App({
     test: 0,
     mine: '',
     index: '',
+    network:''
   },
   onLaunch: function () {
     console.log(this.globalData.test)
@@ -13,18 +14,22 @@ App({
       if (language == "zh" || language == "zh_CN") {
         wx.setStorageSync("language", "zh")
         this.globalData.index = '训练'
-        this.globalData.mine = '我的'
+        this.globalData.mine = '我的',
+        this.globalData.network='配网'
       } else {
         wx.setStorageSync("language", "en")
         this.globalData.index = 'train'
-        this.globalData.mine = 'mine'
+        this.globalData.mine = 'mine',
+        this.globalData.network='network'
       }
     } else if (wx.getStorageSync("language") === "zh") {
       this.globalData.index = '训练'
-      this.globalData.mine = '我的'
+      this.globalData.mine = '我的',
+      this.globalData.network='配网'
     } else if (wx.getStorageSync("language") === "en") {
       this.globalData.index = 'train'
       this.globalData.mine = 'mine'
+      this.globalData.network='network'
     }
   }
 })

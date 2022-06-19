@@ -1,7 +1,7 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/login/login",
+    "pages/network/index",
     "pages/train/train",
     "pages/train/info",
     "pages/train/finish",
@@ -9,7 +9,7 @@
     "pages/mine/plan",
     "pages/mine/set",
     "pages/feedback/index",
-    "pages/setupnet/index"
+    "pages/login/login"
   ],
   "window": {
     "navigationBarBackgroundColor": "#f8f8f8"
@@ -22,6 +22,11 @@
       "iconPath": "assets/image/tabBar/index.png",
       "selectedIconPath": "assets/image/tabBar/index-select.png"
     }, {
+      "text": "配网",
+      "pagePath": "pages/network/index",
+      "iconPath": "assets/image/tabBar/network.png",
+      "selectedIconPath": "assets/image/tabBar/network-select.png"
+    },{
       "text": "我的",
       "pagePath": "pages/mine/index",
       "iconPath": "assets/image/tabBar/mine.png",
