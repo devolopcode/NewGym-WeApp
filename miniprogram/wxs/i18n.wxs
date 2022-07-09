@@ -8,6 +8,7 @@ var i18n = {
         }
       })
     }
+    console.log(result)
     return result
   }
 }

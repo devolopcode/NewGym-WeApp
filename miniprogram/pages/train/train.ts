@@ -45,14 +45,13 @@ Component({
       }
     ],
     devicename: wx.getStorageSync('devicename'),
-    isShowAddDevice: false,
     isShowModel: false,
     newDevicename: '',
     threshold: [4, 7, 10],
     lastPound: 0,
     hindActive: true,
     hindIndex: 0,
-    audios:['https://newgym.cn/smaller','https://newgym.cn/fit','https://newgym.cn/bigger']
+    audios:['https://newgym.cn/audio/smaller.mp3','https://newgym.cn/audio/fit.mp3','https://newgym.cn/audio/bigger.mp3']
   },
   methods: {
     onLoad() {
@@ -61,7 +60,6 @@ Component({
      * 用户点击按钮
      */
     click() {
-      console.log('hello wrold')
       if (this.data.devicename) {
         if (this.data.stateIndex === 0 || this.data.stateIndex === 2) {
           this.connect()
@@ -75,11 +73,7 @@ Component({
             })
           }, 1000)
         } else if (this.data.stateIndex === 1) {
-          this.end()
-          this.setData({
-            stateIndex: 2
-          })
-          clearTimeout(timer)
+          wx.closeSocket()
         }
       } else {
 
@@ -156,40 +150,21 @@ Component({
             })
           }
         })
+        wx.onSocketClose(()=>{
+          this.setData({
+            stateIndex: 2
+          })
+          clearTimeout(timer)
+        })
+        wx.onSocketError(()=>{
+          this.setData({
+            stateIndex: 2
+          })
+          clearTimeout(timer)
+        })
       } else {
 
       }
-    },
-    /**
-     * 断开 WebSocket
-     */
-    end() {
-      wx.closeSocket()
-      wx.onSocketClose(() => {
-        console.log('end')
-      })
-    },
-    /**
-     * 用户添加设备
-     */
-    showAddDevice() {
-      if (this.data.isShowAddDevice || this.data.stateIndex == 1) {
-        this.setData({
-          isShowAddDevice: false
-        })
-      } else {
-        this.setData({
-          isShowAddDevice: true
-        })
-      }
-    },
-    /**
-     * 
-     */
-    hiddenAddDevice() {
-      this.setData({
-        isShowAddDevice: false
-      })
     },
     /**
      * 

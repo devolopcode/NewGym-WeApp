@@ -1,14 +1,17 @@
 <!--pages/mine/set.wxml-->
+<wxs src="../../wxs/i18n.wxs" module="i18n"></wxs>
 <view class="container">
   <view class="m-list">
-    <view class="u-list">
-      <view class="language">中文</view>
+    <view class="u-list" data-name="{{i18n.t(locales['language'])}}">
+      <picker class="language" range="{{languages}}" value="{{index}}" bindchange="changeLanguage">
+        <view>{{languages[index]}}</view>
+      </picker>
     </view>
-    <view class="u-list"></view>
-    <view class="u-list"></view>
-    <view class="u-list"></view>
+    <view class="u-list" data-name="关于我们"></view>
+    <view class="u-list" data-name="用户协议"></view>
+    <view class="u-list" data-name="隐私政策"></view>
   </view>
   <view class="m-list">
-    <view class="u-list-noicon"></view>
+    <view class="u-list-noicon" data-name="退出登录" style="--color:#ff6a41" bindtap="logout"></view>
   </view>
 </view>

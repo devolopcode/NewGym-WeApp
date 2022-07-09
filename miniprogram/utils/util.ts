@@ -18,8 +18,8 @@ const formatNumber = (n: number) => {
   return s[1] ? s : '0' + s
 }
 
-const t = (key:any, option:any = {}) => {
-  const language = wx.getStorageSync('lang');
+export const t = (key:any, option:any = {}) => {
+  const language = wx.getStorageSync('language');
   let locales = null
   if (language === 'en_US') {
     locales = require('../i18n/en')
@@ -31,8 +31,4 @@ const t = (key:any, option:any = {}) => {
     result = result.replace(`{${optionKey}}`, option[optionKey])
   }
   return result
-}
-
-module.exports = {
-  t
 }

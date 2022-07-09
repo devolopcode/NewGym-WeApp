@@ -1,7 +1,7 @@
 const map={
-  language:'English',
+  language:'language',
   start:'start traing',
-  train:'训练',
+  train:'train',
   mine:'mine',
   network:'network'
 }

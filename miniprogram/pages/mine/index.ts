@@ -1,6 +1,6 @@
 // pages/mine/index.ts
 import {Info} from '../../tools/interface'
-
+const app=getApp()
 Page({
 
   /**
@@ -70,7 +70,10 @@ Page({
   onShow() {
     if (typeof this.getTabBar === 'function' && this.getTabBar()) {
       this.getTabBar().setData({
-        selected: 2
+        selected: 2,
+        'list[0].text':app.globalData.train,
+        'list[1].text':app.globalData.network,
+        'list[2].text':app.globalData.mine
       })
     }
   },

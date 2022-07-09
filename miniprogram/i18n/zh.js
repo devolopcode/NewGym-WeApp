@@ -1,5 +1,5 @@
 const map={
-  language:'简体中文',
+  language:'语言',
   start:'开始训练',
   train:'训练',
   mine:'我的',

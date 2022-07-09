@@ -1,4 +1,5 @@
 <!--custom-tab-bar/index.wxml-->
+<wxs src="../wxs/i18n.wxs" module="i18n"></wxs>
 <view class="tab-bar">
   <view wx:for="{{list}}" wx:key="index" class="tab-bar-item" data-path="{{item.pagePath}}" bindtap="switchTab">
     <image class="{{selected!==index?'unselected':''}}" src="{{selected === index ? item.selectedIconPath : item.iconPath}}" mode="aspectFit"></image>
